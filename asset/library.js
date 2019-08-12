@@ -31,12 +31,12 @@ function render(array) {
     let data = "";
     array.forEach(({author, title, numPages, status}, index) => {
         data += `<tr>
-            <td>${index}</td>
+            <td>${index + 1}</td>
             <td>${author}</td>
             <td>${title}</td>
             <td>${numPages}</td>
             <td>${status}</td>
-            <td><button data-index="${index}">Delete</button></td>
+            <td><button data-index="${index}" onclick="deleteBook(this)">Delete</button></td>
         </tr>`
     })
     const bookTable = document.querySelector('table tbody');
@@ -61,3 +61,8 @@ const newBookButton = document.querySelector('#new-book');
 newBookButton.addEventListener('click', (e) => {
     newBookForm();
 })
+
+function deleteBook(book){
+    myLibrary.splice(book.dataset.index,1);
+    render(myLibrary);
+}
