@@ -59,9 +59,9 @@ function render(array) {
 
 function newBookForm() {
     let bookForm = `
-    <p> Author : <input type="text" name="author" /> </p>
-    <p> Title : <input type="text" name="title" /> </p>
-    <p> Number of Pages : <input type="text" name="numPages" /> </p>
+    <p> Author : <input type="text" name="author" required/> </p>
+    <p> Title : <input type="text" name="title" required/> </p>
+    <p> Number of Pages : <input type="text" name="numPages" required/> </p>
     <p>
         Read ? :<input type="checkbox" name="status">            
     </p>
