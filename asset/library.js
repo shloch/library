@@ -16,7 +16,10 @@ function addBookToLibrary() {
     const title = document.querySelector('[name="title"]').value;
     const numPages = document.querySelector('[name="numPages"]').value;
     const status = document.querySelector('[name="status"]').checked;
-    myLibrary.push(new Book(author, title, numPages, status))
+    if (title.length > 0 && numPages.length > 0 && author.length > 0) {
+        myLibrary.push(new Book(author, title, numPages, status));
+    }
+
 }
 
 form.addEventListener('submit', (e) => {
@@ -26,6 +29,7 @@ form.addEventListener('submit', (e) => {
 })
 
 function render(array) {
+    if (myLibrary.length == 0) return [];
     let thead = `
     <thead>
             <td>NO</td>
@@ -38,7 +42,7 @@ function render(array) {
         </thead>
     `
     let data = thead;
-    array.forEach(({author, title, numPages, status}, index) => {
+    array.forEach(({ author, title, numPages, status }, index) => {
         data += `<tr>
             <td>${index + 1}</td>
             <td>${author}</td>
@@ -70,12 +74,12 @@ newBookButton.addEventListener('click', (e) => {
     newBookForm();
 })
 
-function deleteBook(book){
-    myLibrary.splice(book.dataset.index,1);
+function deleteBook(book) {
+    myLibrary.splice(book.dataset.index, 1);
     render(myLibrary);
 }
 
-function changeStatus(book){
+function changeStatus(book) {
     myLibrary[book.dataset.index].status = !myLibrary[book.dataset.index].status
     render(myLibrary);
 }
