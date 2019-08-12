@@ -48,7 +48,7 @@ function render(array) {
             <td>${author}</td>
             <td>${title}</td>
             <td>${numPages}</td>
-            <td>${status}</td>
+            <td>${(status)? 'Read' : 'Unread'}</td>
             <td><button data-index="${index}" onclick="changeStatus(this)">Change Status</button></td>
             <td><button data-index="${index}" onclick="deleteBook(this)">Delete</button></td>
         </tr>`
