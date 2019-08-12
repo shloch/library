@@ -38,6 +38,10 @@ let myLibrary = [];
 
 Visit **/asset/library.js** file for more functionality
 
+## Live demo
+
+https://raw.githack.com/shloch/library/development/index.html
+
 ## Contributors
 
 - Louis SHEY _https://github.com/shloch_
