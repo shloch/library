@@ -22,7 +22,6 @@ function addBookToLibrary() {
 
 form.addEventListener('submit', (e) => {
     addBookToLibrary();
-    console.log(myLibrary);
     render(myLibrary);
     e.preventDefault();
 })
@@ -36,6 +35,7 @@ function render(array) {
             <td>${title}</td>
             <td>${numPages}</td>
             <td>${status}</td>
+            <td><button data-index="${index}" onclick="changeStatus(this)">Change Status</button></td>
             <td><button data-index="${index}" onclick="deleteBook(this)">Delete</button></td>
         </tr>`
     })
@@ -64,5 +64,10 @@ newBookButton.addEventListener('click', (e) => {
 
 function deleteBook(book){
     myLibrary.splice(book.dataset.index,1);
+    render(myLibrary);
+}
+
+function changeStatus(book){
+    myLibrary[book.dataset.index].status = !myLibrary[book.dataset.index].status
     render(myLibrary);
 }
