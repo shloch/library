@@ -1,9 +1,8 @@
 'use strict';
 
-//alert("test");
-
 let myLibrary = [];
 const form = document.querySelector('form');
+const newBookButton = document.querySelector('#new-book');
 
 function Book(author, title, numPages, status) {
     this.author = author;
@@ -27,7 +26,18 @@ form.addEventListener('submit', (e) => {
 })
 
 function render(array) {
-    let data = "";
+    let thead = `
+    <thead>
+            <td>NO</td>
+            <td>Author</td>
+            <td>Title</td>
+            <td>Number of Pages</td>
+            <td>Status</td>
+            <td>Change Status</td>
+            <td>Delete</td>
+        </thead>
+    `
+    let data = thead;
     array.forEach(({author, title, numPages, status}, index) => {
         data += `<tr>
             <td>${index + 1}</td>
@@ -39,12 +49,11 @@ function render(array) {
             <td><button data-index="${index}" onclick="deleteBook(this)">Delete</button></td>
         </tr>`
     })
-    const bookTable = document.querySelector('table tbody');
+    const bookTable = document.querySelector('table');
     bookTable.innerHTML = data;
 }
 
 function newBookForm() {
-    // const form = document.querySelector()
     let bookForm = `
     <p> Author : <input type="text" name="author" /> </p>
     <p> Title : <input type="text" name="title" /> </p>
@@ -57,7 +66,6 @@ function newBookForm() {
     form.innerHTML = bookForm;
 }
 
-const newBookButton = document.querySelector('#new-book');
 newBookButton.addEventListener('click', (e) => {
     newBookForm();
 })
