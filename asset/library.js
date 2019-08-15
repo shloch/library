@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 let myLibrary = [];
-const form = document.querySelector('form');
-const newBookButton = document.querySelector('#new-book');
+const form = document.querySelector("form");
+const newBookButton = document.querySelector("#new-book");
 
 function Book(author, title, numPages, status) {
     this.author = author;
@@ -19,14 +19,15 @@ function addBookToLibrary() {
     if (title.length > 0 && numPages.length > 0 && author.length > 0) {
         myLibrary.push(new Book(author, title, numPages, status));
     }
-
 }
 
-form.addEventListener('submit', (e) => {
+form.addEventListener("submit", e => {
     addBookToLibrary();
+    form.reset();
+    form.innerHTML = "";
     render(myLibrary);
     e.preventDefault();
-})
+});
 
 function render(array) {
     if (myLibrary.length == 0) return [];
@@ -40,7 +41,7 @@ function render(array) {
             <td>Change Status</td>
             <td>Delete</td>
         </thead>
-    `
+    `;
     let data = thead;
     array.forEach(({ author, title, numPages, status }, index) => {
         data += `<tr>
@@ -48,12 +49,12 @@ function render(array) {
             <td>${author}</td>
             <td>${title}</td>
             <td>${numPages}</td>
-            <td>${(status)? 'Read' : 'Unread'}</td>
+            <td>${status ? "Read" : "Unread"}</td>
             <td><button data-index="${index}" onclick="changeStatus(this)">Change Status</button></td>
             <td><button data-index="${index}" onclick="deleteBook(this)">Delete</button></td>
-        </tr>`
-    })
-    const bookTable = document.querySelector('table');
+        </tr>`;
+    });
+    const bookTable = document.querySelector("table");
     bookTable.innerHTML = data;
 }
 
@@ -66,13 +67,13 @@ function newBookForm() {
         Read ? :<input type="checkbox" name="status">            
     </p>
     <p><button type="submit">Submit</button></p>
-    `
+    `;
     form.innerHTML = bookForm;
 }
 
-newBookButton.addEventListener('click', (e) => {
+newBookButton.addEventListener("click", e => {
     newBookForm();
-})
+});
 
 function deleteBook(book) {
     myLibrary.splice(book.dataset.index, 1);
@@ -80,6 +81,6 @@ function deleteBook(book) {
 }
 
 function changeStatus(book) {
-    myLibrary[book.dataset.index].status = !myLibrary[book.dataset.index].status
+    myLibrary[book.dataset.index].status = !myLibrary[book.dataset.index].status;
     render(myLibrary);
 }
