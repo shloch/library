@@ -1,20 +1,6 @@
-<<<<<<< HEAD
 # library
 Book library with basic Javascript
 
-## Contributors
-
-### 👤 **SHEY Louis CHIA**
-
-- Github: [shloch](https://github.com/shloch)
-- Twitter: [@shloch](https://twitter.com/shloch)
-- Linkedin: [/in/shey-louis-chia](https://www.linkedin.com/in/shey-louis-chia)
-- Email: shloch2007@yahoo.fr
-
-||||||| merged common ancestors
-# library
-Book library with basic Javascript
-=======
 # LIBRARY
 
 Using the concepts of javascript 'OBJECTS' and 'OBJECT CONSTRUCTOR' to construct a 1-page basic Book library. The following functionalities are implemented :
@@ -61,6 +47,13 @@ https://raw.githack.com/shloch/library/development/index.html
 
 ## Contributors
 
-- Louis SHEY _https://github.com/shloch_
+### 👤 **SHEY Louis CHIA**
+
+- Github: [shloch](https://github.com/shloch)
+- Twitter: [@shloch](https://twitter.com/shloch)
+- Linkedin: [/in/shey-louis-chia](https://www.linkedin.com/in/shey-louis-chia)
+- Email: shloch2007@yahoo.fr
+
+
+### 👤 **Terver Aosu**
 - Terver Aosu _https://github.com/truetechcode_
->>>>>>> 7f510467764b0e0b607a1622e858b209f45936e7
