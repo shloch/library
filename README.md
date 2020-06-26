@@ -49,6 +49,11 @@ https://raw.githack.com/shloch/library/development/index.html
 
 ![alt text](https://github.com/shloch/library/blob/master/book.gif)
 
+## Future features
+- Redo a good responsive book design into the project
+- add pop-up window for the form to add books
+- add more animation
+
 ## Contributors
 
 ### 👤 **SHEY Louis CHIA**
