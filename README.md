@@ -45,6 +45,10 @@ Visit **/asset/library.js** file for more functionality
 
 https://raw.githack.com/shloch/library/development/index.html
 
+### Screenshot
+
+![alt text](https://github.com/shloch/library/blob/master/book.gif)
+
 ## Contributors
 
 ### 👤 **SHEY Louis CHIA**
