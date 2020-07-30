@@ -66,3 +66,8 @@ https://raw.githack.com/shloch/library/development/index.html
 
 ### 👤 **Terver Aosu**
 - Terver Aosu _https://github.com/truetechcode_
+
+## Acknowledgements
+- https://www.theodinproject.com/
+- https://javascript.info/
+- https://raw.githack.com
